@@ -24,9 +24,22 @@ Pdata_cmp = size(Pdata,1);
 Cdata_cmp = size(Cdata,1);
 
 % Calculating Cell connectivity data, (conectivity, offset, and types)
-cnnct = [];
-offset = [];
-types = [];
+cnnct = zeros(4,no_cells);
+offset = 4:4:4*no_cells;
+types = 9*ones(no_cells,1);
+
+% Construct cell connectivity array
+cnn_base = [0, gx+1, gx+2, 1];
+cell_num = 1;
+for i=1:gy
+    for j=1:gx
+       cnnct(:,cell_num) = cnn_base;
+       cnn_base = cnn_base+1;
+       cell_num = cell_num+1;
+    end
+    cnn_base = cnn_base+1;
+end
+
 
 % -------------Strings of VTU format---------------------------
 % The strings need not to be devided into these many. Here, I divided into
@@ -84,31 +97,31 @@ str_close_vtu = cat(2, '</Piece> \n', ...
 fprintf(fid, str_init, no_pnts, no_cells);
 
 fprintf(fid, str_Pdata, 'Displacement', Pdata_cmp);
-fprintf(fid, '%g', Pdata(:));
+fprintf(fid, '%g ', Pdata(:));
 fprintf(fid, str_Pdata_c);
 
 fprintf(fid, str_Cdata, 'Density', Cdata_cmp);
-fprintf(fid, '%g', Cdata(:));
+fprintf(fid, '%g ', Cdata(:));
 fprintf(fid, str_Cdata_c);
 
 % Writing Point information
 fprintf(fid, str_pnts, no_cords);
-fprintf(fid, '%g', pnts(:));
+fprintf(fid, '%g ', pnts(:));
 fprintf(fid, str_pnts_c);
 
 % Writing Cell information - Connectivity
 fprintf(fid, str_cnct );
-fprintf(fid, '%d', cnnct);
+fprintf(fid, '%d ', cnnct(:));
 fprintf(fid, str_cnct_c );
 
 % Writing Cell Offset
 fprintf(fid, str_off );
-fprintf(fid, '%d', offset);
+fprintf(fid, '%d ', offset(:));
 fprintf(fid, str_off_c );
 
 % Writing Cell types
 fprintf(fid, str_types );
-fprintf(fid, '%d', types);
+fprintf(fid, '%d ', types(:));
 fprintf(fid, str_tpye_c );
 
 fprintf(fid, str_cell_c );
