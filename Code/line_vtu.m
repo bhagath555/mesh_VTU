@@ -10,7 +10,7 @@ types = 3*ones(no_cells,1);
 % Construct cell connectivity array
 el_cnct = [0,1];
 for i =1:no_cells
-    conct(:,i) = i*el_cnct;
+    conct(:,i) = (i-1)+el_cnct;
 
 write_VTU(p_data, c_data, pnts, conct, offset, types, filename)
 
