@@ -5,12 +5,14 @@ Basically, VTU in one of the file format of Visualization toolkit (VTK). It stan
 
 #### The major sections in VTU format are 
 
-* Point information  section, 
-* Cell information region,
+* Point information, 
+* Cell information,
 * Point data section (Data associated with the points).
 * Cell data section (Data associated with cells).
 
-#### Overall Structure of VTU format:
+Note : While reading the below section, I'll suggest you read any one of the example .vtu to actually observe the VTU structure. And also, geometry and other data used in the example  .vtu is shown pictorially in section:3. Go through those figures to get idea on implementation and adding more features.
+
+#### Complete Structure of VTU format:
 
 * First line should be the xml version.
 * VTK file Type and its version. In our case we are using UnstrcturedGrid type and version 0.1.
@@ -19,7 +21,7 @@ Basically, VTU in one of the file format of Visualization toolkit (VTK). It stan
 * Within the Piece, We provide the Point data as shown below. 
   * It should start with <PointData> command.
     * While entering the actual data, We have to define the respective collection of information in DataArray format, this is the case with any kind of collection of information.
-    * With in data array, It is necessary to mentions the type of data numerically, i,e float or int, then Data name, The provided data will be available with this name tag in software's like paraview.
+    * With in data array, It is necessary to mentions the numerical type of the data, i.e float or int, then data name. The provided data will be available with this name tag in the visualization software's like paraview.
     * then format of the data, whether it is ascii or binary. 
     * And number of components of data at any its corresponding vertex or cell
     * After defining the  information, we provide the components of data of each vertex. 
@@ -32,7 +34,9 @@ Basically, VTU in one of the file format of Visualization toolkit (VTK). It stan
     * Last one is type of  the cells used for above topology.
   * Yeah, We reached to the end. Here, Close the all opened section above and view the file in Paraview.
 
+Example:
 
 
 
+![elems](README/elems.png)
 
