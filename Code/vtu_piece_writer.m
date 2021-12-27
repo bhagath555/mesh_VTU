@@ -1,4 +1,4 @@
-function vtu_piece_writer(p_data, c_data, pnts, conct, offset, types, filename)
+function vtu_piece_writer(p_data, c_data, pnts, conct, offset, types, file)
 
 no_pnts = size(pnts,2);
 no_cords = size(pnts,1);
@@ -8,11 +8,6 @@ if size(p_data,2) ~= no_pnts
     error ('Points data size is not matching with points')
 end
 
-
-fid = fopen (filename, 'w');
-if (fid < 0)
-    error ('msh_to_vtu: could not open file %s', filename);
-end
 
 p_data_cmp = size(p_data,1);
 c_data_cmp = size(c_data,1);
@@ -67,39 +62,37 @@ str_close_vtu = cat(2, '</Piece> \n');
 
 %%  Writing into the file.
 
-fprintf(fid, str_init, no_pnts, no_cells);
+fprintf(file, str_init, no_pnts, no_cells);
 
-fprintf(fid, str_Pdata, 'Displacement', p_data_cmp);
-fprintf(fid, '%g ', p_data(:));
-fprintf(fid, str_Pdata_c);
+fprintf(file, str_Pdata, 'Displacement', p_data_cmp);
+fprintf(file, '%g ', p_data(:));
+fprintf(file, str_Pdata_c);
 
-fprintf(fid, str_Cdata, 'Density', c_data_cmp);
-fprintf(fid, '%g ', c_data(:));
-fprintf(fid, str_Cdata_c);
+fprintf(file, str_Cdata, 'Density', c_data_cmp);
+fprintf(file, '%g ', c_data(:));
+fprintf(file, str_Cdata_c);
 
 % Writing Point information
-fprintf(fid, str_pnts, no_cords);
-fprintf(fid, '%g ', pnts(:));
-fprintf(fid, str_pnts_c);
+fprintf(file, str_pnts, no_cords);
+fprintf(file, '%g ', pnts(:));
+fprintf(file, str_pnts_c);
 
 % Writing Cell information - Connectivity
-fprintf(fid, str_cnct );
-fprintf(fid, '%d ', conct(:));
-fprintf(fid, str_cnct_c );
+fprintf(file, str_cnct );
+fprintf(file, '%d ', conct(:));
+fprintf(file, str_cnct_c );
 
 % Writing Cell Offset
-fprintf(fid, str_off );
-fprintf(fid, '%d ', offset(:));
-fprintf(fid, str_off_c );
+fprintf(file, str_off );
+fprintf(file, '%d ', offset(:));
+fprintf(file, str_off_c );
 
 % Writing Cell types
-fprintf(fid, str_types );
-fprintf(fid, '%d ', types(:));
-fprintf(fid, str_tpye_c );
+fprintf(file, str_types );
+fprintf(file, '%d ', types(:));
+fprintf(file, str_tpye_c );
 
-fprintf(fid, str_cell_c );
-fprintf(fid, str_close_vtu );
-
-fclose (fid);
+fprintf(file, str_cell_c );
+fprintf(file, str_close_vtu );
 
 end
