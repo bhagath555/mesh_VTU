@@ -1,0 +1,105 @@
+<?xml version="1.0"?> 
+<VTKFile type="UnstructuredGrid" version="0.1"> 
+<UnstructuredGrid> 
+
+<Piece NumberOfPoints="6" NumberOfCells="5"> 
+<PointData>
+<DataArray type="Float64" Name="Displacement" format="ascii" NumberOfComponents="3"> 
+1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 </DataArray> 
+</PointData> 
+<CellData>
+<DataArray type="Float64" Name="Density" format="ascii" NumberOfComponents="1"> 
+1 2 3 4 5 6 </DataArray> 
+</CellData> 
+<Points> 
+<DataArray type="Float64" NumberOfComponents="3"> 
+0.225 0 1.13 0.515 0 2.05 0.98 0 2.93 1.8 0 3.6 3.4 0 3.4 5.25 0 0 
+</DataArray> 
+</Points> 
+<Cells> 
+<DataArray type="Int32" Name="connectivity">
+0 1 1 2 2 3 3 4 4 5 
+</DataArray> 
+<DataArray type="Int32" Name="offsets"> 
+2 4 6 8 10 </DataArray> 
+<DataArray type="Int32" Name="types"> 
+3 3 3 3 3 </DataArray>
+</Cells> 
+</Piece> 
+
+<Piece NumberOfPoints="6" NumberOfCells="5"> 
+<PointData>
+<DataArray type="Float64" Name="Displacement" format="ascii" NumberOfComponents="3"> 
+1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 </DataArray> 
+</PointData> 
+<CellData>
+<DataArray type="Float64" Name="Density" format="ascii" NumberOfComponents="1"> 
+1 2 3 4 5 6 </DataArray> 
+</CellData> 
+<Points> 
+<DataArray type="Float64" NumberOfComponents="3"> 
+0 0.225 1.13 0 0.515 2.05 0 0.98 2.93 0 1.8 3.6 0 3.4 3.4 0 5.25 0 
+</DataArray> 
+</Points> 
+<Cells> 
+<DataArray type="Int32" Name="connectivity">
+0 1 1 2 2 3 3 4 4 5 
+</DataArray> 
+<DataArray type="Int32" Name="offsets"> 
+2 4 6 8 10 </DataArray> 
+<DataArray type="Int32" Name="types"> 
+3 3 3 3 3 </DataArray>
+</Cells> 
+</Piece> 
+
+<Piece NumberOfPoints="6" NumberOfCells="5"> 
+<PointData>
+<DataArray type="Float64" Name="Displacement" format="ascii" NumberOfComponents="3"> 
+1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 </DataArray> 
+</PointData> 
+<CellData>
+<DataArray type="Float64" Name="Density" format="ascii" NumberOfComponents="1"> 
+1 2 3 4 5 6 </DataArray> 
+</CellData> 
+<Points> 
+<DataArray type="Float64" NumberOfComponents="3"> 
+-0.225 0 1.13 -0.515 0 2.05 -0.98 0 2.93 -1.8 0 3.6 -3.4 0 3.4 -5.25 0 0 
+</DataArray> 
+</Points> 
+<Cells> 
+<DataArray type="Int32" Name="connectivity">
+0 1 1 2 2 3 3 4 4 5 
+</DataArray> 
+<DataArray type="Int32" Name="offsets"> 
+2 4 6 8 10 </DataArray> 
+<DataArray type="Int32" Name="types"> 
+3 3 3 3 3 </DataArray>
+</Cells> 
+</Piece> 
+
+<Piece NumberOfPoints="6" NumberOfCells="5"> 
+<PointData>
+<DataArray type="Float64" Name="Displacement" format="ascii" NumberOfComponents="3"> 
+1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 </DataArray> 
+</PointData> 
+<CellData>
+<DataArray type="Float64" Name="Density" format="ascii" NumberOfComponents="1"> 
+1 2 3 4 5 6 </DataArray> 
+</CellData> 
+<Points> 
+<DataArray type="Float64" NumberOfComponents="3"> 
+0 -0.225 1.13 0 -0.515 2.05 0 -0.98 2.93 0 -1.8 3.6 0 -3.4 3.4 0 -5.25 0 
+</DataArray> 
+</Points> 
+<Cells> 
+<DataArray type="Int32" Name="connectivity">
+0 1 1 2 2 3 3 4 4 5 
+</DataArray> 
+<DataArray type="Int32" Name="offsets"> 
+2 4 6 8 10 </DataArray> 
+<DataArray type="Int32" Name="types"> 
+3 3 3 3 3 </DataArray>
+</Cells> 
+</Piece> 
+</UnstructuredGrid> 
+</VTKFile> 
