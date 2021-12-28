@@ -43,4 +43,3 @@ Note : While reading the below section, I'll suggest you read any one of the exa
 #### Example Geometries:
 
 ##### Quad Geometry:![quad_geometry](README/quad_geometry.png)
-
