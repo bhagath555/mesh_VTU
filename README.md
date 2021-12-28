@@ -34,9 +34,13 @@ Note : While reading the below section, I'll suggest you read any one of the exa
     * Last one is type of  the cells used for above topology.
   * Yeah, We reached to the end. Here, Close the all opened section above and view the file in Paraview.
 
-Example:
-
-
+#### Various VTU elements:
 
 ![elems](README/elems.png)
+
+
+
+#### Example Geometries:
+
+##### Quad Geometry:![quad_geometry](README/quad_geometry.png)
 
