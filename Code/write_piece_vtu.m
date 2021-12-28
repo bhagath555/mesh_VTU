@@ -1,4 +1,4 @@
-function vtu_piece_writer(p_data, c_data, pnts, conct, offset, types, file)
+function write_piece_vtu(p_data, c_data, pnts, conct, offset, types, file)
 
 no_pnts = size(pnts,2);
 no_cords = size(pnts,1);
