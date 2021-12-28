@@ -1,4 +1,4 @@
-function close_piece_vtu(file)
+function piece_vtu_close(file)
 str_close_vtu = cat(2, '</UnstructuredGrid> \n', ...
     '</VTKFile> \n');
 
