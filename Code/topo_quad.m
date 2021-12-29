@@ -1,7 +1,5 @@
-function [conct, offset, types] = topo_quad(pnts, cells_x, cells_y)
+function [conct, offset, types] = topo_quad(pnts, gx, gy)
 
-gx = cells_x;
-gy = cells_y;
 no_cells  = gx*gy; 
 
 % Checking the relation between no. of points and grid shape.

@@ -18,4 +18,4 @@ cells_z = pz-1;
 p_data = rand(size(pnts));
 c_data = rand(size(types'));
 
-write_VTU(p_data, c_data, pnts, conct, offset, types, 'Hex.vtu')
+write_VTU(p_data, c_data, pnts, conct, offset, types, '../VTU_files/Hex.vtu')

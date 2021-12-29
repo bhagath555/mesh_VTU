@@ -25,22 +25,13 @@ c_data = [1,2,3,4,5,6];
 filename = 'multi-line.vtu';
 
 file = fopen (filename, 'w');
-init_piece_vtu(file)
+piece_vtu_init(file)
 
 for i=1:4
     pnts = matrix(:,:,i)*verts;
-    % Number of cells 
-    no_cells = size(pnts,2)-1;
-    % Calculating Cell connectivity data, (conectivity, offset, and types)
-    conct = zeros(2,no_cells);
-    offset = 2:2:2*no_cells;
-    types = 3*ones(no_cells,1);
-    % Construct cell connectivity array
-    el_cnct = [0,1];
-    for j =1:no_cells
-        conct(:,j) = (j-1)+el_cnct;
-    end
-    vtu_piece_writer(p_data, c_data, pnts, conct, offset, types, file)
+    % Generate topology information of points information
+    [conct, offset, types] = topo_line(pnts);
+    write_piece_vtu(p_data, c_data, pnts, conct, offset, types, file)
 end
 
 %% Writing the quad geometry.
@@ -58,31 +49,17 @@ pnts = [-0.4,-1,1;
          2.3,2.6,1];
 
 pnts = pnts';
+% Number of cells in each direction
 gx = 3;
 gy = 2;
-no_cells  = gx*gy; 
-
-% Calculating Cell connectivity data, (conectivity, offset, and types)
-conct = zeros(4,no_cells);
-offset = 4:4:4*no_cells;
-types = 9*ones(no_cells,1);
-% Construct cell connectivity array
-cnn_base = [0, gx+1, gx+2, 1];
-cell_num = 1;
-for i=1:gy
-    for j=1:gx
-       conct(:,cell_num) = cnn_base;
-       cnn_base = cnn_base+1;
-       cell_num = cell_num+1;
-    end
-    cnn_base = cnn_base+1;
-end
-
+% Generating topology information
+[conct, offset, types] = topo_quad(pnts, gx, gy);
+% Random point and cell data
 p_data = 6*rand([3,(gx+1)*(gy+1)]);
 c_data = 6*rand([1,no_cells]);
 
-vtu_piece_writer(p_data, c_data, pnts, conct, offset, types, file)
+write_piece_vtu(p_data, c_data, pnts, conct, offset, types, file)
 
 
 %% Closing the file
-close_piece_vtu(file)
+piece_vtu_close(file)
