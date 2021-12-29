@@ -15,7 +15,7 @@ conct = zeros(8,no_cells);
 offset = 8:8:8*no_cells;
 types = 12*ones(no_cells,1);
 % Construct cell connectivity array
-cb = [0,gx+1,gx+2,1,(gx+1)*(gy+1), (gx+1)*(gy+1)+gx+1, (gx+1)*(gy+1)+gx+2, (gx+1)*(gy+1)+1];
+cb = [0,1,gx+2,gx+1,(gx+1)*(gy+1), (gx+1)*(gy+1)+1, (gx+1)*(gy+1)+gx+2,(gx+1)*(gy+1)+gx+1];
 cell_num = 1;
 for k=1:gz
     for j=1:gy
@@ -26,7 +26,7 @@ for k=1:gz
         end
         cb = cb+1;
     end
-    cb = cb+1;
+    cb = cb+gx+gy-1;
 end
 
 end
