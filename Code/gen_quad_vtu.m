@@ -4,8 +4,8 @@
 pnts = [0 5 10 0 5 10 0 5 10; 0 0 0 4 4 4 8 8 8; 0 0 0 0 0 0 0 0 0];
 gx = 2;
 gy = 2;
-Pdata = randn(3, size(pnts,2)); % Point Data (3, number of points)
-Cdata = randn(1,gx*gy); % Cell Data (1, number of cells)
+p_data = randn(3, size(pnts,2)); % Point Data (3, number of points)
+c_data = randn(1,gx*gy); % Cell Data (1, number of cells)
 % The VTU file with above data will be store here.s
 filename = '../VTU_files/2DQuad.vtu';
 % Topology information
