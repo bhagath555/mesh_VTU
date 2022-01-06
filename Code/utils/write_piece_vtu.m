@@ -19,18 +19,6 @@ c_data_cmp = size(c_data,1);
 
 str_init = cat (2, '\n<Piece NumberOfPoints="%d" NumberOfCells="%d"> \n');
 
-str_Pdata = cat (2, '<PointData>\n', ...
-    '<DataArray type="Float64" Name="%s" format="ascii" NumberOfComponents="%d"> \n');
-% Point data closing command
-str_Pdata_c = cat(2, '</DataArray> \n', ...
-    '</PointData> \n'); 
-
-str_Cdata = cat (2, '<CellData>\n', ...
-    '<DataArray type="Float64" Name="%s" format="ascii" NumberOfComponents="%d"> \n');
-% Cell data closing command
-str_Cdata_c = cat (2,'</DataArray> \n', ...
-    '</CellData> \n');
-
 % Point information
 str_pnts = cat(2, '<Points> \n', ...
     '<DataArray type="Float64" NumberOfComponents="%d"> \n');
@@ -58,6 +46,19 @@ str_tpye_c = '</DataArray>\n';
 % Closing cell
 str_cell_c =  '</Cells> \n';
 
+% Writing point data
+str_Pdata = cat (2, '<PointData>\n', ...
+    '<DataArray type="Float64" Name="%s" format="ascii" NumberOfComponents="%d"> \n');
+% Point data closing command
+str_Pdata_c = cat(2, '</DataArray> \n', ...
+    '</PointData> \n'); 
+% Writing cell data
+str_Cdata = cat (2, '<CellData>\n', ...
+    '<DataArray type="Float64" Name="%s" format="ascii" NumberOfComponents="%d"> \n');
+% Cell data closing command
+str_Cdata_c = cat (2,'</DataArray> \n', ...
+    '</CellData> \n');
+% Closing the piece
 str_close_vtu = cat(2, '</Piece> \n');
 
 %%  Writing into the file.
