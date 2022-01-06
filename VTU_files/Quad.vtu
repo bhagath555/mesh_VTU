@@ -2,14 +2,6 @@
 <VTKFile type="UnstructuredGrid" version="0.1"> 
 <UnstructuredGrid> 
 <Piece NumberOfPoints="9" NumberOfCells="4"> 
-<PointData>
-<DataArray type="Float64" Name="Displacement" format="ascii" NumberOfComponents="3"> 
-0.62519 0.183227 -1.02977 0.949222 0.307062 0.135175 0.515246 0.261406 -0.941486 -0.162338 -0.146055 -0.532011 1.6821 -0.875729 -0.483815 -0.712005 -1.17421 -0.19224 -0.27407 1.53007 -0.249025 -1.06421 1.60346 1.23468 -0.229626 -1.50616 -0.444628 </DataArray> 
-</PointData> 
-<CellData>
-<DataArray type="Float64" Name="Density" format="ascii" NumberOfComponents="1"> 
--0.155941 0.276068 -0.261164 0.443422 </DataArray> 
-</CellData> 
 <Points> 
 <DataArray type="Float64" NumberOfComponents="3"> 
 0 0 0 5 0 0 10 0 0 0 4 0 5 4 0 10 4 0 0 8 0 5 8 0 10 8 0 
@@ -24,6 +16,14 @@
 <DataArray type="Int32" Name="types"> 
 9 9 9 9 </DataArray>
 </Cells> 
+<PointData>
+<DataArray type="Float64" Name="Displacement" format="ascii" NumberOfComponents="3"> 
+-0.288256 0.350063 -1.83586 1.03598 2.42446 0.959401 -0.315772 0.428623 -1.03598 1.87787 0.940704 0.787346 -0.875874 0.319949 -0.558294 -0.311429 -0.57001 -1.02573 -0.908746 -0.209897 -1.69886 0.607601 -0.117798 0.69916 0.269649 0.494287 -1.48312 </DataArray> 
+</PointData> 
+<CellData>
+<DataArray type="Float64" Name="Density" format="ascii" NumberOfComponents="1"> 
+-1.02026 -0.446995 0.109659 1.12874 </DataArray> 
+</CellData> 
 </Piece> 
 </UnstructuredGrid> 
 </VTKFile> 
