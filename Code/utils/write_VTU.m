@@ -49,7 +49,7 @@ str_off_c = '</DataArray> \n';
 % Cell types
 str_types = '<DataArray type="Int32" Name="types"> \n';
 % Cell type closing
-str_tpye_c = '</DataArray>\n';
+str_types_c = '</DataArray>\n';
 
 % Closing cell
 str_cell_c =  '</Cells> \n';
@@ -76,14 +76,6 @@ str_close_vtu = cat(2, '</Piece> \n', ...
 
 fprintf(fid, str_init, no_pnts, no_cells);
 
-fprintf(fid, str_Pdata, 'Displacement', p_data_cmp);
-fprintf(fid, '%g ', p_data(:));
-fprintf(fid, str_Pdata_c);
-
-fprintf(fid, str_Cdata, 'Density', c_data_cmp);
-fprintf(fid, '%g ', c_data(:));
-fprintf(fid, str_Cdata_c);
-
 % Writing Point information
 fprintf(fid, str_pnts, no_cords);
 fprintf(fid, '%g ', pnts(:));
@@ -102,9 +94,18 @@ fprintf(fid, str_off_c );
 % Writing Cell types
 fprintf(fid, str_types );
 fprintf(fid, '%d ', types(:));
-fprintf(fid, str_tpye_c );
-
+fprintf(fid, str_types_c );
 fprintf(fid, str_cell_c );
+
+% Writing point data.
+fprintf(fid, str_Pdata, 'Displacement', p_data_cmp);
+fprintf(fid, '%g ', p_data(:));
+fprintf(fid, str_Pdata_c);
+% Writing cell data
+fprintf(fid, str_Cdata, 'Density', c_data_cmp);
+fprintf(fid, '%g ', c_data(:));
+fprintf(fid, str_Cdata_c);
+
 fprintf(fid, str_close_vtu );
 
 fclose (fid);

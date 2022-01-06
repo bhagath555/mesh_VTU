@@ -59,19 +59,11 @@ str_Cdata = cat (2, '<CellData>\n', ...
 str_Cdata_c = cat (2,'</DataArray> \n', ...
     '</CellData> \n');
 % Closing the piece
-str_close_vtu = cat(2, '</Piece> \n');
+str_close_piece = cat(2, '</Piece> \n');
 
 %%  Writing into the file.
 
 fprintf(file, str_init, no_pnts, no_cells);
-
-fprintf(file, str_Pdata, 'Displacement', p_data_cmp);
-fprintf(file, '%g ', p_data(:));
-fprintf(file, str_Pdata_c);
-
-fprintf(file, str_Cdata, 'Density', c_data_cmp);
-fprintf(file, '%g ', c_data(:));
-fprintf(file, str_Cdata_c);
 
 % Writing Point information
 fprintf(file, str_pnts, no_cords);
@@ -92,8 +84,17 @@ fprintf(file, str_off_c );
 fprintf(file, str_types );
 fprintf(file, '%d ', types(:));
 fprintf(file, str_tpye_c );
-
 fprintf(file, str_cell_c );
-fprintf(file, str_close_vtu );
+
+% Writing point data
+fprintf(file, str_Pdata, 'Displacement', p_data_cmp);
+fprintf(file, '%g ', p_data(:));
+fprintf(file, str_Pdata_c);
+% Writing cell data
+fprintf(file, str_Cdata, 'Density', c_data_cmp);
+fprintf(file, '%g ', c_data(:));
+fprintf(file, str_Cdata_c);
+
+fprintf(file, str_close_piece );
 
 end
