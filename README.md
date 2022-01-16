@@ -33,6 +33,34 @@ Note : While reading the below section, I'll suggest you read any one of the exa
   
 ```
 
+```
++---Code
+|   +---examples
+|   |       experimental.m
+|   |       gen_hex_vtu.m
+|   |       gen_line_vtu.m
+|   |       gen_multiline_vtu.m
+|   |       gen_quad_frm_lines.asv
+|   |       gen_quad_vtu.m
+|   |       write_density_vtu.m
+|   |       
+|   \---utils
+|           piece_vtu_close.m
+|           piece_vtu_init.m
+|           topo_hexahedron.m
+|           topo_line.m
+|           topo_quad.m
+|           write_piece_vtu.m
+|           write_VTU.m
+|       
+\---VTU_files
+        experimental.vtu
+        Hex.vtu
+        line.vtu
+        multi_line.vtu
+        Quad.vtu       
+```
+
 
 #### Complete Structure of VTU format:
 
