@@ -1,5 +1,5 @@
 % Generating point coordinates
-px = 5; py=3; pz=4;
+px = 10; py=10; pz=10;
 pnts = zeros(3,px*py*pz);
 el = 1;
 for z=1:pz
@@ -20,4 +20,4 @@ cells_z = pz-1;
 p_data = rand(size(pnts));
 c_data = rand(size(types'));
 
-write_VTU(p_data, c_data, pnts, conct, offset, types, '../../VTU_files/Hex.vtu')
+write_VTU(p_data, c_data, pnts, conct, offset, types, 'Hex20.vtu')

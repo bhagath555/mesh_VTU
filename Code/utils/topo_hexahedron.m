@@ -26,7 +26,7 @@ for k=1:gz
         end
         cb = cb+1;
     end
-    cb = cb+gx+gy-1;
+    cb = cb+gx+1;
 end
 
 end
